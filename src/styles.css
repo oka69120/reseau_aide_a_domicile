@@ -112,7 +112,7 @@ body {
     position: absolute;
     top: 70px;
     left: 0;
-    background: rgba(0, 90, 141, 0.9);
+    background: rgba(85, 183, 71, 0.9);
     width: 100%;
     padding: 20px;
     border-radius: 0 0 10px 10px;
@@ -128,20 +128,66 @@ body {
     display: flex;
   }
 }
-.contact-info {
-  margin-left: 20px;
-  font-size: 1.1rem;
+/* 🔥 Conteneur du téléphone */
+.phone-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #55b747;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.contact-info a {
+/* 🔥 Lien du numéro */
+.phone-container a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.contact-info a:hover {
-  color: #ffd700;
+/* 🔥 Icône du téléphone */
+.phone-container i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🆕 Effet au survol */
+.phone-container:hover,
+.phone-container a:hover {
+  color: #ffd700; /* Changement de couleur */
+  transform: scale(1.2); /* Légère augmentation */
+}
+
+/* 📱 Cacher le texte du numéro et ne laisser que l'icône sur mobile */
+@media screen and (max-width: 768px) {
+  .phone-text {
+    display: none; /* Cache le numéro */
+  }
+
+  .phone-container {
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .phone-container i {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  /* 🆕 Effet au survol pour mobile */
+  .phone-container:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+  }
 }
 
 /* session1 */
