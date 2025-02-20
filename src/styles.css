@@ -969,3 +969,37 @@ select.form-control {
     display: none;
   }
 }
+
+/* 🔥 Bouton flottant pour remonter en haut */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #55b747;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 🆕 Effet au survol */
+.scroll-top:hover {
+  background: #3a8b2e;
+  transform: scale(1.1);
+}
+
+/* 🆕 Afficher le bouton quand on scrolle */
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
