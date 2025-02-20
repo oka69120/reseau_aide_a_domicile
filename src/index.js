@@ -277,20 +277,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Configuration du bandeau RGPD
-tarteaucitron.init({
-  privacyUrl:
-    "politique-de-confidentialite.html" /* 🔗 Lien vers ta politique de confidentialité */,
-  hashtag: "#tarteaucitron" /* Paramètre pour le tracking */,
-  cookieName: "tarteaucitron" /* Nom du cookie qui stocke la préférence */,
-  orientation: "bottom" /* Position du bandeau (bottom, top, middle, etc.) */,
-  showAlertSmall: true /* ✅ Affiche une icône flottante pour modifier les préférences */,
-  cookieslist: true /* ✅ Liste des cookies dans la pop-up */,
-  adblocker: false /* ✅ Détection d'Adblock */,
-  DenyAllCta: true /* ✅ Ajoute un bouton "Tout refuser" */,
-  AcceptAllCta: true /* ✅ Ajoute un bouton "Tout accepter" */,
-  highPrivacy: true /* ✅ Nécessite un consentement explicite */,
-  handleBrowserDNTRequest: false /* ✅ Ne pas prendre en compte le Do Not Track */,
-  removeCredit: true /* ✅ Supprime le crédit Tarteaucitron */,
-  moreInfoLink: true /* ✅ Affiche un lien "En savoir plus" */,
-  useExternalCss: false /* ✅ Permet de personnaliser le design */,
-});

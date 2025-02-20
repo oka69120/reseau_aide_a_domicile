@@ -380,8 +380,19 @@
 
 <!-- 🔥 GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<!-- 🔥 Tarteaucitron.js (Bibliothèque Cookie RGPD) -->
-<script type="text/javascript" src="https://tarteaucitron.io/load.js?domain=ton-site.com&c=EXEMPLE" async></script>
+
+<!-- 🔥 Script Axeptio pour le consentement RGPD -->
+<script>
+  window.axeptioSettings = {
+    clientId: "67b79fa4e01383bfd0733ef6",
+  };
+
+  (function(d, s) {
+    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+    e.async = true; e.src = "https://static.axept.io/sdk.js";
+    t.parentNode.insertBefore(e, t);
+  })(document, "script");
+</script>
 
   </body>
 </html>
