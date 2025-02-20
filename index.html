@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- 🔥 Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- 🔥 Font Awesome pour les icônes -->
     <link
       rel="stylesheet"
@@ -33,7 +36,7 @@
   <body>
     <nav class="nav">
       <div class="logo">
-        <img src="logo.png" alt="Logo de l'agence" />
+        <img src="/src/images/LogoColorTextBelow.jpeg" alt="Logo de l'agence" />
       </div>
       <div class="menu-toggle" id="menu-toggle">
         <span class="bar"></span>
@@ -59,21 +62,22 @@
           <span></span>
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </nav>
     <section class="hero">
       <div class="hero-content">
-        <h1>Bienvenue chez RESEAU D'AIDE A DOMICILE</h1>
-        <p>
-          Des services à domicile de qualité, adaptés à vos besoins du
-          quotidien.
-        </p>
-        <!-- 🔥 Bouton d'Appel à l'Action Modernisé -->
-        <a href="contact.html" class="cta-button">
-          <span>Contactez nous</span> <i class="fas fa-arrow-right"></i>
-        </a>
+        <div class="hero-title">
+          <h1>Bienvenue chez RESEAU D'AIDE A DOMICILE</h1>
+          <p>
+            Des services à domicile de qualité, adaptés à vos besoins du
+            quotidien.
+          </p>
+          <a href="#" class="btn-underline">Découvrir nos services</a>
+        </div>
+        <div class="hero-images">
+          <img src="src/images/credit-impot-50.png" alt="Image 1">
+          <img src="src/images/service-a-la-personne.png" alt="Image 2">
       </div>
     </section>
     <!-- session services -->
@@ -125,6 +129,16 @@
     <section class="why-choose-us">
       <h2>Pourquoi nous choisir ?</h2>
       <div class="timeline">
+        <!-- Étape 0 -->
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>50% de réduction d'impôt</h3>
+            <p>
+              Profitez d’un crédit d’impôt de 50% sur vos dépenses en services à la personne. Réduction immédiate ou déduction fiscale.
+            </p>
+          </div>
+          <div class="timeline-icon"><i class="fas fa-piggy-bank"></i></div>
+        </div>
         <!-- Étape 1 -->
         <div class="timeline-item left">
           <div class="timeline-content">
@@ -204,9 +218,7 @@
           </p>
 
           <!-- 🔥 Bouton d'Appel à l'Action Modernisé -->
-          <a href="contact.html" class="cta-button">
-            <span>Obtenir un Devis</span> <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="#" class="btn-underline">Découvrir nos services</a>
         </div>
 
         <!-- Fond d'image sur la partie droite -->
