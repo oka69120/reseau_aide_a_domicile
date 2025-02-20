@@ -1024,19 +1024,21 @@ select.form-control {
 }
 
 /* 🔥 Personnalisation du pop-up RGPD */
-.cc-window {
-  font-size: 1rem !important;
+/* 🔥 Personnalisation du bandeau RGPD */
+#tarteaucitronRoot {
+  font-size: 1rem;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: #2b2b2b !important;
 }
 
-/* 🆕 Personnalisation des boutons */
-.cc-btn {
+/* ✅ Personnalisation des boutons */
+#tarteaucitronRoot .tarteaucitronCTAButton {
   border-radius: 5px !important;
   padding: 10px 20px !important;
 }
 
-.cc-deny {
+#tarteaucitronRoot .tarteaucitronCTAButton--refuse {
   background: #f44336 !important;
   color: white !important;
 }

@@ -277,31 +277,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Configuration du bandeau RGPD
-document.addEventListener("DOMContentLoaded", function () {
-  window.cookieconsent.initialise({
-    palette: {
-      popup: { background: "#2b2b2b" } /* Fond du pop-up */,
-      button: { background: "#55b747" } /* Bouton Accepter */,
-      highlight: { background: "#f44336" } /* Bouton Refuser */,
-    },
-    theme: "classic",
-    position: "bottom" /* Affiché en bas de l'écran */,
-    type: "opt-in" /* Oblige l'utilisateur à choisir */,
-    revokable: true /* Permet de modifier son choix */,
-    content: {
-      message: "Nous utilisons des cookies pour améliorer votre expérience.",
-      allow: "Accepter",
-      deny: "Refuser",
-      link: "En savoir plus",
-      href: "politique-de-confidentialite.html" /* Lien vers ta politique de confidentialité */,
-    },
-    onInitialise: function (status) {
-      if (status == cookieconsent.status.deny) {
-        console.log("L'utilisateur a refusé les cookies.");
-      }
-    },
-    onStatusChange: function (status) {
-      console.log("Nouvelle action utilisateur : " + status);
-    },
-  });
+tarteaucitron.init({
+  privacyUrl:
+    "politique-de-confidentialite.html" /* 🔗 Lien vers ta politique de confidentialité */,
+  hashtag: "#tarteaucitron" /* Paramètre pour le tracking */,
+  cookieName: "tarteaucitron" /* Nom du cookie qui stocke la préférence */,
+  orientation: "bottom" /* Position du bandeau (bottom, top, middle, etc.) */,
+  showAlertSmall: true /* ✅ Affiche une icône flottante pour modifier les préférences */,
+  cookieslist: true /* ✅ Liste des cookies dans la pop-up */,
+  adblocker: false /* ✅ Détection d'Adblock */,
+  DenyAllCta: true /* ✅ Ajoute un bouton "Tout refuser" */,
+  AcceptAllCta: true /* ✅ Ajoute un bouton "Tout accepter" */,
+  highPrivacy: true /* ✅ Nécessite un consentement explicite */,
+  handleBrowserDNTRequest: false /* ✅ Ne pas prendre en compte le Do Not Track */,
+  removeCredit: true /* ✅ Supprime le crédit Tarteaucitron */,
+  moreInfoLink: true /* ✅ Affiche un lien "En savoir plus" */,
+  useExternalCss: false /* ✅ Permet de personnaliser le design */,
 });
