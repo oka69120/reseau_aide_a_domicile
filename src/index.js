@@ -275,3 +275,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Configuration du bandeau RGPD
+document.addEventListener("DOMContentLoaded", function () {
+  window.cookieconsent.initialise({
+    palette: {
+      popup: { background: "#2b2b2b" } /* Fond du pop-up */,
+      button: { background: "#55b747" } /* Bouton Accepter */,
+      highlight: { background: "#f44336" } /* Bouton Refuser */,
+    },
+    theme: "classic",
+    position: "bottom" /* Affiché en bas de l'écran */,
+    type: "opt-in" /* Oblige l'utilisateur à choisir */,
+    revokable: true /* Permet de modifier son choix */,
+    content: {
+      message: "Nous utilisons des cookies pour améliorer votre expérience.",
+      allow: "Accepter",
+      deny: "Refuser",
+      link: "En savoir plus",
+      href: "politique-de-confidentialite.html" /* Lien vers ta politique de confidentialité */,
+    },
+    onInitialise: function (status) {
+      if (status == cookieconsent.status.deny) {
+        console.log("L'utilisateur a refusé les cookies.");
+      }
+    },
+    onStatusChange: function (status) {
+      console.log("Nouvelle action utilisateur : " + status);
+    },
+  });
+});
