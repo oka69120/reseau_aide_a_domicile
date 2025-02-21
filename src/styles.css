@@ -301,7 +301,7 @@ h3 {
   }
 
   .hero-content {
-    max-width: 80%; /* Évite que le texte prenne toute la largeur */
+    max-width: 100%; /* Évite que le texte prenne toute la largeur */
   }
 
   .hero h1 {
@@ -310,6 +310,7 @@ h3 {
 
   .hero p {
     font-size: 1.2rem;
+    margin: 40px 40px;
   }
 }
 

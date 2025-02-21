@@ -1,0 +1,583 @@
+/* Réinitialisation et styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Bannière principale (Hero Section) */
+.hero {
+  background: url("/src/images/reseau_aide_a_dom.jpg") center/cover no-repeat
+    fixed;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 70vh; /* Ajuste la hauteur pour bien afficher l’image */
+}
+
+/* Ajout d'un overlay sombre pour améliorer la lisibilité */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajout d’un filtre sombre */
+  z-index: 1;
+}
+
+/* Le texte doit être au-dessus de l’overlay */
+.hero h1,
+.hero p,
+.btn-action {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-action {
+  display: inline-block;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-action:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+/* ✅ Optimisation Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* Réduction de la hauteur pour voir plus de contenu */
+    padding: 60px 15px; /* Moins d’espace en haut et en bas */
+    background-attachment: scroll; /* Évite l’effet de fixation de l’image sur mobile */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    display: none;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .btn-action {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Présentation des Services */
+.presentation {
+  padding: 80px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+/* Style épuré et professionnel pour le titre principal (h2) */
+.presentation h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Soulignement sobre et moderne */
+.presentation h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #28a745;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transform: scaleX(1); /* Taille initiale */
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animation douce */
+}
+
+/* Effet d'étirement progressif au survol */
+.presentation h2:hover::after {
+  transform: scaleX(3); /* Le soulignement s’étire progressivement */
+}
+
+/* Animation subtile d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.presentation p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Disposition des services en grille */
+.services {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch; /* Permet d'aligner tous les blocs à la même hauteur */
+}
+
+/* Cartes des services */
+.service {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  min-width: 280px;
+  flex: 1; /* Permet aux blocs d’avoir la même hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Équilibre le contenu à l'intérieur */
+  transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+/* Titres des services */
+.service h3 {
+  font-size: 1.8rem;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+/* Paragraphe d’introduction */
+.service p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Liste des avantages */
+/* Centrer la liste tout en alignant le texte à gauche */
+.service ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre la liste */
+}
+
+.service ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  background: #eef6f0;
+  border-radius: 8px;
+  width: 100%; /* Prend toute la largeur disponible */
+  max-width: 400px; /* Évite que la liste soit trop large */
+  text-align: left; /* Alignement du texte à gauche */
+}
+
+.service ul li i {
+  color: #28a745;
+  font-size: 1.5rem;
+}
+
+/* Ajout d’un bouton d’action pour équilibrer la hauteur des cartes */
+.service .btn-service {
+  display: inline-block;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: auto; /* Aligne le bouton en bas pour un équilibre parfait */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service .btn-service:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    width: 90%;
+  }
+}
+
+/* Section Fonctionnement */
+.fonctionnement {
+  background: #f8f9fa;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Style épuré et professionnel pour le titre de la section Fonctionnement */
+.fonctionnement h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.fonctionnement p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Soulignement animé avec effet fluide */
+.fonctionnement h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #28a745;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transform: scaleX(1);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Effet d'étirement progressif au survol */
+.fonctionnement h2:hover::after {
+  transform: scaleX(2);
+}
+
+.etapes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.etape {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  padding: 25px;
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.etape:hover {
+  transform: translateY(-10px);
+}
+
+.etape h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.etape p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Section Zone d'Intervention */
+.zone {
+  background: white; /* Fond global blanc */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Conteneur principal avec fond coloré */
+.zone-contenu {
+  background: rgba(40, 167, 69, 0.1); /* Fond vert léger */
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Titre inclus dans la zone colorée */
+.zone h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* Disposition en deux colonnes */
+.zone-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: left;
+}
+
+/* Colonnes */
+.zone .colonne {
+  padding: 10px;
+}
+
+/* Style épuré et professionnel pour le titre de la section Fonctionnement */
+.zone h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Soulignement animé avec effet fluide */
+.zone h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #28a745;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transform: scaleX(1);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Effet d'étirement progressif au survol */
+.zone h2:hover::after {
+  transform: scaleX(2);
+}
+.zone p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Bouton centré dans la zone colorée */
+.zone-bouton {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Style du bouton */
+.btn-contact {
+  display: inline-block;
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-contact:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Responsive : Une seule colonne sur mobile */
+@media (max-width: 768px) {
+  .zone-contenu {
+    grid-template-columns: 1fr; /* Passe en une seule colonne */
+    padding: 30px;
+  }
+
+  .zone h2 {
+    font-size: 2rem;
+  }
+
+  .zone-text {
+    grid-template-columns: 1fr; /* Passe aussi en une seule colonne */
+  }
+
+  .zone p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Section FAQ */
+.faq {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.faq details {
+  background: #e9ecef;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  max-width: 600px;
+  margin: 0 auto 15px;
+  font-size: 1.2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq details:hover {
+  transform: scale(1.02);
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq p {
+  margin-top: 10px;
+}
+
+/* Animation d'apparition progressive */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .etapes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .btn-action {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🔥 Style du bouton avec soulignement dynamique */
+.btn-underline {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #55b747;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  border: 2px solid #55b747;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* ------------------------------------
+bouton
+- ------------------------------------*/
+/* 🔥 Style du bouton avec soulignement dynamique */
+.btn-underline {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #55b747;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  border: 2px solid #55b747;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* 🆕 Effet de soulignement qui glisse */
+.btn-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background: #55b747;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+/* 🆕 Effet de hover */
+.btn-underline:hover {
+  color: white;
+  background: #55b747;
+}
+
+/* 🔥 Le soulignement s'anime */
+.btn-underline:hover::after {
+  width: 100%;
+}
