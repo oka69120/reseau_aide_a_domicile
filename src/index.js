@@ -275,5 +275,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// Configuration du bandeau RGPD
