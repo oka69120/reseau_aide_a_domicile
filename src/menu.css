@@ -1,0 +1,394 @@
+body {
+  background-color: #55b747;
+  color: #333;
+}
+
+/* 🔥 Police principale des titres */
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+/* 🆕 Option alternative : Playfair Display pour un style plus élégant */
+.alternative-title {
+  font-family: "Playfair Display", serif;
+}
+
+/* 🆕 Option alternative : Poppins pour un design minimaliste */
+.minimal-title {
+  font-family: "Poppins", sans-serif;
+}
+/* ----------------------
+   Pied de page (Footer)
+----------------------- */
+/* 🔥 Pied de page (Footer) */
+.footer {
+  background: #2b2b2b;
+  color: white;
+  padding: 50px 5%;
+  text-align: center;
+}
+
+/* 🔹 Conteneur principal du footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* 🔹 Section Logo */
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* 🔹 Liens rapides */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fccc44;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #fccc44;
+}
+
+/* 🔹 Contact */
+.footer-contact p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #fccc44;
+}
+/* 🔥 Suppression du soulignement et harmonisation du design */
+.footer-contact a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #ccc; /* Même couleur que l'adresse */
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-contact a:hover {
+  color: #fccc44; /* Effet au survol comme les autres textes */
+}
+
+/* 🔹 Réseaux sociaux */
+.footer-social .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-social .social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+  color: #fccc44;
+  transform: scale(1.2);
+}
+
+/* 🔹 Section Copyright */
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* 📱 Responsive : Ajustement du footer pour mobile */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 20px;
+    text-align: center; /* Centrer tout le contenu */
+  }
+
+  .footer-logo img {
+    max-width: 80px; /* Réduction du logo pour éviter qu'il prenne trop de place */
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 6px; /* Espacement plus léger */
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* 📌 Espacement pour éviter que le footer soit trop collé au bas de l'écran */
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+}
+
+/* 🔥 Bouton flottant pour remonter en haut */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #55b747;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+/* 🆕 Effet au survol */
+.scroll-top:hover {
+  background: #3a8b2e;
+  transform: scale(1.1);
+}
+
+/* 🆕 Afficher le bouton quand on scrolle */
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Entete */
+/* Styles du menu */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #55b747, #55b747);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: #fccc44;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* Menu burger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.menu-toggle .bar {
+  background-color: white;
+  height: 4px;
+  width: 35px;
+  border-radius: 2px;
+  transition: all 0.4s;
+}
+
+/* Effet animé sur le menu burger */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* 🔥 Ajustement du logo */
+.logo img {
+  max-height: 50px; /* Limite la hauteur du logo */
+  width: auto; /* Garde les proportions */
+  object-fit: contain; /* Évite toute déformation */
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: rgba(85, 183, 71, 0.9);
+    width: 100%;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+/* 🔥 Conteneur du téléphone */
+.phone-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #55b747;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🔥 Lien du numéro */
+.phone-container a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🔥 Icône du téléphone */
+.phone-container i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🆕 Effet au survol */
+.phone-container:hover,
+.phone-container a:hover {
+  color: #ffd700; /* Changement de couleur */
+  transform: scale(1.2); /* Légère augmentation */
+}
+
+/* 📱 Cacher le texte du numéro et ne laisser que l'icône sur mobile */
+@media screen and (max-width: 768px) {
+  .phone-text {
+    display: none; /* Cache le numéro */
+  }
+
+  .phone-container {
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .phone-container i {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  /* 🆕 Effet au survol pour mobile */
+  .phone-container:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+  }
+}

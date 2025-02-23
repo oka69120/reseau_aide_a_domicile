@@ -3,14 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 🔥 Font Awesome pour les icônes -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <!-- 🔥 Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/91673c1ad2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- 🔥 Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- 🔥 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <title>Service de Nettoyage à Domicile</title>
-    <!-- Lien vers le fichier CSS -->
+    <!-- 🔥 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 🔥 GSAP pour les animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Aide à la Personne à Domicile</title>
   </head>
+  <!-- En-tête -->
+  <div id="header-container"></div>
   <body>
     <!-- Bannière Principale -->
     <section class="hero">
@@ -53,6 +77,7 @@
               <i class="fas fa-user-shield"></i> Agents qualifiés et de
               confiance
             </li>
+            <a href="#" class="btn-underline">Découvrir nos services</a>
           </ul>
         </div>
 
@@ -73,6 +98,7 @@
               <i class="fas fa-truck"></i> Service à domicile pour plus de
               confort
             </li>
+            <a href="#" class="btn-underline">Découvrir nos services</a>
           </ul>
         </div>
       </div>
@@ -151,35 +177,76 @@
 
         <!-- Bouton d'appel à l'action -->
         <div class="zone-bouton">
-          <a href="contact.html" class="btn-contact"
-            >Vérifier ma zone d’intervention</a
-          >
+          <a href="#" class="btn-underline">Vérifier ma zone d'intervention</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Section FAQ -->
     <section class="faq">
       <h2>Questions Fréquentes</h2>
-      <details>
-        <summary>Quels produits utilisez-vous ?</summary>
-        <p>
-          Nous utilisons des produits écologiques et sans danger pour votre
-          santé et celle de votre famille.
-        </p>
-      </details>
-      <details>
-        <summary>Puis-je modifier ou annuler une réservation ?</summary>
-        <p>
-          Oui, vous pouvez modifier ou annuler votre réservation jusqu'à 24h
-          avant l'intervention.
-        </p>
-      </details>
-      <details>
-        <summary>Quels sont vos horaires d'intervention ?</summary>
-        <p>Nos agents interviennent 7 jours sur 7, de 8h à 20h.</p>
-      </details>
+
+      <div class="faq-container">
+        <details>
+          <summary>📌 Quels services proposez-vous ?</summary>
+          <p>
+            Nous proposons des services de nettoyage et de repassage à domicile
+            sur toute la région lyonnaise. Nos prestations sont flexibles et
+            adaptées à vos besoins.
+          </p>
+        </details>
+
+        <details>
+          <summary>📅 Quels sont vos horaires d'intervention ?</summary>
+          <p>
+            Nous intervenons 7j/7 selon vos disponibilités, en semaine, le
+            week-end et même en soirée pour s'adapter à votre emploi du temps.
+          </p>
+        </details>
+
+        <details>
+          <summary>💰 Quels sont vos tarifs ?</summary>
+          <p>
+            Nos tarifs varient en fonction du type de service et de la fréquence
+            des interventions. Contactez-nous pour un devis personnalisé.
+          </p>
+        </details>
+        <details>
+          <summary>💶 Puis-je bénéficier d'un crédit d'impôt de 50% ?</summary>
+          <p>
+            Oui, en tant que service à la personne, nos prestations ouvrent
+            droit à un <strong>crédit d'impôt de 50%</strong>. Cela signifie que
+            vous pouvez récupérer
+            <strong>la moitié des sommes dépensées</strong> sous forme de
+            réduction ou de remboursement d'impôt. Cette aide est accessible à
+            tous, que vous soyez imposable ou non.
+          </p>
+        </details>
+
+        <details>
+          <summary>📍 Dans quelles zones intervenez-vous ?</summary>
+          <p>
+            Nous couvrons Lyon et ses environs : Villeurbanne, Bron, Vénissieux,
+            Oullins, Écully et bien d'autres communes. Vérifiez votre zone
+            d'intervention sur notre site.
+          </p>
+        </details>
+
+        <details>
+          <summary>📞 Comment réserver un service ?</summary>
+          <p>
+            Vous pouvez réserver en ligne via notre formulaire ou nous contacter
+            directement par téléphone pour organiser une intervention.
+          </p>
+        </details>
+      </div>
     </section>
+    <!-- Pied de page -->
+    <div id="footer-container"></div>
     <script type="module" src="/src/menage.js"></script>
+    <button id="scrollTopBtn" class="scroll-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script type="module" src="/src/menu.js"></script>
   </body>
 </html>
